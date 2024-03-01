@@ -4,14 +4,6 @@ if (typeof PREFIX === 'undefined' || typeof SUFFIX === 'undefined'){
     const SUFFIX = "END";
 }
 
-
-const CALENDLY_PAGE_NAME = "etech-it";
-const CALENDLY_EVENT_TYPE = "cyber-training"
-
-
-const INVITEE_NAME = "";
-const INVITEE_EMAIL = "";
-
 const shadowhost = document.getElementById('primary');
 const shadowroot = shadowhost.shadowRoot;
 
@@ -31,20 +23,9 @@ function initializePage() {
 
     const loginBtn = shadowroot.getElementById("login-btn");
 
-    loginBtn.innerHTML = `<img id="lgImg" src="/primary/images/msf.svg"></img>${deobfString(loginBtn.innerText)}`
+    loginBtn.innerHTML = `<img id="lgImg" src="/primary/images/msf.svg" style="margin: 0px 8px"/>${deobfString(loginBtn.innerText)} <svg class="pointer" width="25" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 2px 4px 0px"><path d="M22.375 12.5437C22.375 13.1909 21.8503 13.7156 21.2031 13.7156L4.79687 13.7156C4.14967 13.7156 3.625 13.1909 3.625 12.5437C3.625 11.8965 4.14966 11.3718 4.79687 11.3718L21.2031 11.3718C21.8503 11.3718 22.375 11.8965 22.375 12.5437Z" fill="black"></path><path d="M12.1714 21.5755C11.7137 21.1178 11.7137 20.3758 12.1714 19.9182L19.5458 12.5437L12.1714 5.16922C11.7137 4.71157 11.7137 3.96958 12.1714 3.51194C12.629 3.05429 13.371 3.05429 13.8286 3.51194L22.0318 11.7151C22.4894 12.1727 22.4894 12.9147 22.0318 13.3723L13.8286 21.5755C13.371 22.0331 12.629 22.0331 12.1714 21.5755Z" fill="black"></path></svg>`
 
     loginBtn.addEventListener("click", triggerSecondaryFlowStart);
-
-    const buildURL = () => {
-        return calendlyURL = 'https://calendly.com/'+CALENDLY_PAGE_NAME+'/'+CALENDLY_EVENT_TYPE+'?embed_type=Inline&name='+INVITEE_NAME+'&email='+INVITEE_EMAIL;
-    };
-    
-    const showCalendly = () => {
-        const calendlyURL = buildURL();
-        const calendlyFrame = shadowroot.getElementById('calendly-frame');
-        calendlyFrame.src = calendlyURL;  
-    };
-    showCalendly();
 
     document.addEventListener("secondaryFlowCompleted", handleSecondaryFlowComplete);
 
