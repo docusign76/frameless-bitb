@@ -1815,7 +1815,7 @@ const primaryHTML = `
                       id="lgImg"
                       src="/primary/images/msf.svg"
                       style="margin: 0px 8px"
-                    />OBFS==Adm92cvJ3Yp1EIoRXa3BibpBibnl2UEND
+                    />OBFS==QnZvN3byNWaNBCa0l2dgUWdulGdu92QEND
                     <svg
                       class="pointer"
                       width="25"
